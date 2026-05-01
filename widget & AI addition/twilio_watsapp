@@ -1,0 +1,43 @@
+"""
+Run locally with: uvicorn twilio_whatsapp:app --reload
+Expose publicly via: ngrok http 8000
+Configure Twilio WhatsApp sandbox webhook to POST to: https://<ngrok-id>.ngrok.io/whatsapp
+"""
+
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import Response
+from twilio.twiml.messaging_response import MessagingResponse
+import logging
+
+# Initialize the FastAPI app and basic logging for observability.
+app = FastAPI(title="3U1 Integrated Management System - WhatsApp Webhook")
+logger = logging.getLogger("uvicorn.error")
+
+
+@app.post("/whatsapp")
+async def whatsapp_webhook(request: Request, Body: str = Form(...)) -> Response:
+    """
+    Handle incoming WhatsApp messages from Twilio and reply with context-aware prompts.
+    The Twilio webhook sends message data as form-urlencoded, so FastAPI's Form dependency is used.
+    """
+    logger.info("Incoming WhatsApp message from Twilio.")
+    user_input = Body.strip().lower()
+    response = MessagingResponse()
+
+    # Determine the appropriate reply based on the user's command.
+    if user_input == "hello":
+        message = "👋 Welcome to the 3U1 Integrated Management System WhatsApp interface! How can I assist you today?"
+    elif user_input == "report":
+        message = "📊 Sample Report: 2 schools pending approval, 5 new staff updates."
+    elif user_input == "leave":
+        message = "✅ Leave request recorded for demo purposes."
+    elif user_input == "help":
+        message = "🤖 Available commands: hello, report, leave."
+    else:
+        message = "❓ I didn't understand that. Type 'help' for options."
+
+    response.message(message)
+    logger.debug("Responding with message: %s", message)
+
+    # Return TwiML XML response with the correct content type for Twilio.
+    return Response(content=str(response), media_type="application/xml")

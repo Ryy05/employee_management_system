@@ -1,0 +1,66 @@
+{
+    "name": "employee-management-system-integrated",
+    "version": "1.0.0",
+    "description": "Integrated Employee Management System with Chatbot and IP Tracking",
+    "main": "index.js",
+    "scripts": {
+        "install:all": "npm run install:backend && npm run install:frontend && npm run install:python",
+        "install:backend": "cd employee-mgmt-system-main/backend && npm install",
+        "install:frontend": "cd employee-mgmt-system-main/frontend && npm install",
+        "install:python": "pip install -r python_requirements.txt",
+        "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:chatbot\"",
+        "dev:backend": "cd employee-mgmt-system-main/backend && npm run dev",
+        "dev:frontend": "cd employee-mgmt-system-main/frontend && npm run dev",
+        "dev:chatbot": "python employee-mgmt-system-main/backend/chatbot_service.py",
+        "build": "npm run build:backend && npm run build:frontend",
+        "build:backend": "cd employee-mgmt-system-main/backend && npm install --production",
+        "build:frontend": "cd employee-mgmt-system-main/frontend && npm run build",
+        "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\" \"npm run start:chatbot\"",
+        "start:backend": "cd employee-mgmt-system-main/backend && npm start",
+        "start:frontend": "cd employee-mgmt-system-main/frontend && npm start",
+        "start:chatbot": "python employee-mgmt-system-main/backend/chatbot_service.py",
+        "docker:build": "docker-compose build",
+        "docker:up": "docker-compose up -d",
+        "docker:down": "docker-compose down",
+        "docker:logs": "docker-compose logs -f",
+        "docker:restart": "docker-compose restart",
+        "setup": "npm run install:all && npm run setup:env && npm run setup:db",
+        "setup:env": "node scripts/setup-env.js",
+        "setup:db": "node scripts/setup-db.js",
+        "test": "npm run test:backend && npm run test:frontend",
+        "test:backend": "cd employee-mgmt-system-main/backend && npm test",
+        "test:frontend": "cd employee-mgmt-system-main/frontend && npm test",
+        "lint": "npm run lint:backend && npm run lint:frontend",
+        "lint:backend": "cd employee-mgmt-system-main/backend && npm run lint",
+        "lint:frontend": "cd employee-mgmt-system-main/frontend && npm run lint",
+        "clean": "npm run clean:deps && npm run clean:builds",
+        "clean:deps": "rm -rf employee-mgmt-system-main/backend/node_modules employee-mgmt-system-main/frontend/node_modules node_modules",
+        "clean:builds": "rm -rf employee-mgmt-system-main/frontend/.next employee-mgmt-system-main/backend/dist",
+        "backup:db": "node scripts/backup-db.js",
+        "restore:db": "node scripts/restore-db.js"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    },
+    "keywords": [
+        "employee-management",
+        "chatbot",
+        "ip-tracking",
+        "nextjs",
+        "nodejs",
+        "mongodb",
+        "fastapi",
+        "python"
+    ],
+    "author": "Employee Management System Team",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-username/employee-management-system"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=8.0.0",
+        "python": ">=3.8.0"
+    }
+}

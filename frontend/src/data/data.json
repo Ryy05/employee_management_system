@@ -1,0 +1,1482 @@
+{
+  "district": "Central District",
+  "zones": [
+      {
+          "zone": "assar",
+          "zonation": "I",
+          "schools": [
+              {
+                  "id": 101,
+                  "udise_code": 101001,
+                  "name": "Sanskriti Vidyalaya",
+                  "address": "Plot 12, Sector 5, Jammu, J&K 180001",
+                  "principal": "Amit Kumar",
+                  "contact": "+91-9876543210",
+                  "scheme": "elementary",
+                  "sub_scheme": "10+2",
+
+                  "employees": [
+                      {
+                          
+                          "name_of_sanctioned_posts": "TEACHER",
+                          "emp_name": "Rohit Verma",
+                          "emp_id": 1001,
+                          "attendance": "Present",
+                          "date_of_birth": "1985-06-15",
+                          "date_of_first_appointment": "2010-07-01",
+                          "designation_at_first_appointment": "Assistant Teacher",
+                          "qualification": "B.Ed, M.Ed",
+                          "subject_in_pg": "Mathematics",
+                          "present_designation": "Senior Teacher",
+                          "date_of_latest_promotion": "2018-06-20",
+                          "date_of_retirement": "2050-06-15",
+                          "date_from_which_working_in_this_current_office": "2010-07-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2010-07-01",
+                                  "end_date": "2013-06-30"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2013-07-01",
+                                  "end_date": "2016-06-30"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2016-07-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 5",
+                          "gross_salary": "₹650000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Teaching"
+                      },
+                      {
+                          "udise_code": 101002,
+                          "name_of_sanctioned_posts": "ACCOUNTANT",
+                          "emp_name": "Amit Kumar",
+                          "emp_id": 1002,
+                          "attendance": "Present",
+                          "date_of_birth": "1984-05-10",
+                          "date_of_first_appointment": "2009-04-15",
+                          "designation_at_first_appointment": "Junior Accountant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Commerce",
+                          "present_designation": "Accountant",
+                          "date_of_latest_promotion": "2015-07-10",
+                          "date_of_retirement": "2044-05-10",
+                          "date_from_which_working_in_this_current_office": "2009-04-15",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2009-04-15",
+                                  "end_date": "2012-04-14"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2012-04-15",
+                                  "end_date": "2015-04-14"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2015-04-15",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹400000",
+                          "pay_level": "Level 4",
+                          "gross_salary": "₹450000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101003,
+                          "name_of_sanctioned_posts": "ACCOUNTS ASSISTANT",
+                          "emp_name": "Suresh Yadav",
+                          "emp_id": 1003,
+                          "attendance": "Leave",
+                          "date_of_birth": "1990-03-05",
+                          "date_of_first_appointment": "2015-01-10",
+                          "designation_at_first_appointment": "Accounts Assistant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Business Studies",
+                          "present_designation": "Accounts Assistant",
+                          "date_of_latest_promotion": "2020-05-20",
+                          "date_of_retirement": "2050-03-05",
+                          "date_from_which_working_in_this_current_office": "2015-01-10",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2015-01-10",
+                                  "end_date": "2017-01-09"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2017-01-10",
+                                  "end_date": "2019-01-09"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2019-01-10",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹350000",
+                          "pay_level": "Level 3",
+                          "gross_salary": "₹400000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101004,
+                          "name_of_sanctioned_posts": "ASSISTANT DIRECTOR (P & S)",
+                          "emp_name": "Priya Mehta",
+                          "emp_id": 1004,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1982-08-25",
+                          "date_of_first_appointment": "2007-06-12",
+                          "designation_at_first_appointment": "Assistant Director",
+                          "qualification": "M.A. Economics",
+                          "subject_in_pg": "Economics",
+                          "present_designation": "Assistant Director (P & S)",
+                          "date_of_latest_promotion": "2013-09-20",
+                          "date_of_retirement": "2042-08-25",
+                          "date_from_which_working_in_this_current_office": "2007-06-12",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2007-06-12",
+                                  "end_date": "2010-06-11"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2010-06-12",
+                                  "end_date": "2013-06-11"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2013-06-12",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹700000",
+                          "pay_level": "Level 8",
+                          "gross_salary": "₹850000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101005,
+                          "name_of_sanctioned_posts": "CHAUFFAUR",
+                          "emp_name": "Ravi Kumar",
+                          "emp_id": 1005,
+                          "attendance": "Absent",
+                          "date_of_birth": "1978-10-12",
+                          "date_of_first_appointment": "2005-04-01",
+                          "designation_at_first_appointment": "Driver",
+                          "qualification": "10th Grade",
+                          "subject_in_pg": "None",
+                          "present_designation": "Chauffeur",
+                          "date_of_latest_promotion": "2010-05-15",
+                          "date_of_retirement": "2038-10-12",
+                          "date_from_which_working_in_this_current_office": "2005-04-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2005-04-01",
+                                  "end_date": "2008-03-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2008-04-01",
+                                  "end_date": "2011-03-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2011-04-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹300000",
+                          "pay_level": "Level 2",
+                          "gross_salary": "₹350000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101006,
+                          "name_of_sanctioned_posts": "CEO",
+                          "emp_name": "Arun Saini",
+                          "emp_id": 1006,
+                          "attendance": "Present",
+                          "date_of_birth": "1975-12-03",
+                          "date_of_first_appointment": "2000-07-21",
+                          "designation_at_first_appointment": "Chief Executive Officer",
+                          "qualification": "MBA",
+                          "subject_in_pg": "Business Administration",
+                          "present_designation": "CEO",
+                          "date_of_latest_promotion": "2010-01-15",
+                          "date_of_retirement": "2045-12-03",
+                          "date_from_which_working_in_this_current_office": "2000-07-21",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2000-07-21",
+                                  "end_date": "2005-07-20"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2005-07-21",
+                                  "end_date": "2010-07-20"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2010-07-21",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹1000000",
+                          "pay_level": "Level 10",
+                          "gross_salary": "₹1200000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101007,
+                          "name_of_sanctioned_posts": "DEPO",
+                          "emp_name": "Simran Kaur",
+                          "emp_id": 1007,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1988-02-14",
+                          "date_of_first_appointment": "2012-09-01",
+                          "designation_at_first_appointment": "Depot Manager",
+                          "qualification": "M.Sc",
+                          "subject_in_pg": "Biology",
+                          "present_designation": "Depot Officer",
+                          "date_of_latest_promotion": "2016-03-10",
+                          "date_of_retirement": "2040-02-14",
+                          "date_from_which_working_in_this_current_office": "2012-09-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2012-09-01",
+                                  "end_date": "2015-08-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2015-09-01",
+                                  "end_date": "2018-08-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2018-09-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 6",
+                          "gross_salary": "₹600000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      }
+                  ],
+                  "dailyAttendance": [
+                      {
+                          "date": "2023-08-15",
+                          "attendanceRecords": [
+                              {
+                                  "employeeId": "1001",
+                                  "status": "Present"
+                              }
+                          ],
+                          "notes": "All employees reported on time."
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "zone": "bhaderwah",
+          "zonation": "II",
+          "schools": [
+              {
+                  "id": 102,
+                  "name": "Pragati High School",
+                  "address": "Village Pahalgam, Bhaderwah, J&K 182101",
+                  "principal": "Suman Gupta",
+                  "contact": "+91-9123456789",
+                  "scheme": "secondary",
+                  "sub_scheme": "10+2G",
+                  "employees": [
+                      {
+                          "udise_code": 101001,
+                          "name_of_sanctioned_posts": "TEACHER",
+                          "emp_name": "Rohit Verma",
+                          "emp_id": 1001,
+                          "attendance": "Present",
+                          "date_of_birth": "1985-06-15",
+                          "date_of_first_appointment": "2010-07-01",
+                          "designation_at_first_appointment": "Assistant Teacher",
+                          "qualification": "B.Ed, M.Ed",
+                          "subject_in_pg": "Mathematics",
+                          "present_designation": "Senior Teacher",
+                          "date_of_latest_promotion": "2018-06-20",
+                          "date_of_retirement": "2050-06-15",
+                          "date_from_which_working_in_this_current_office": "2010-07-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2010-07-01",
+                                  "end_date": "2013-06-30"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2013-07-01",
+                                  "end_date": "2016-06-30"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2016-07-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 5",
+                          "gross_salary": "₹650000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Teaching"
+                      },
+                      {
+                          "udise_code": 101002,
+                          "name_of_sanctioned_posts": "ACCOUNTANT",
+                          "emp_name": "Amit Kumar",
+                          "emp_id": 1002,
+                          "attendance": "Present",
+                          "date_of_birth": "1984-05-10",
+                          "date_of_first_appointment": "2009-04-15",
+                          "designation_at_first_appointment": "Junior Accountant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Commerce",
+                          "present_designation": "Accountant",
+                          "date_of_latest_promotion": "2015-07-10",
+                          "date_of_retirement": "2044-05-10",
+                          "date_from_which_working_in_this_current_office": "2009-04-15",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2009-04-15",
+                                  "end_date": "2012-04-14"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2012-04-15",
+                                  "end_date": "2015-04-14"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2015-04-15",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹400000",
+                          "pay_level": "Level 4",
+                          "gross_salary": "₹450000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101003,
+                          "name_of_sanctioned_posts": "ACCOUNTS ASSISTANT",
+                          "emp_name": "Suresh Yadav",
+                          "emp_id": 1003,
+                          "attendance": "Leave",
+                          "date_of_birth": "1990-03-05",
+                          "date_of_first_appointment": "2015-01-10",
+                          "designation_at_first_appointment": "Accounts Assistant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Business Studies",
+                          "present_designation": "Accounts Assistant",
+                          "date_of_latest_promotion": "2020-05-20",
+                          "date_of_retirement": "2050-03-05",
+                          "date_from_which_working_in_this_current_office": "2015-01-10",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2015-01-10",
+                                  "end_date": "2017-01-09"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2017-01-10",
+                                  "end_date": "2019-01-09"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2019-01-10",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹350000",
+                          "pay_level": "Level 3",
+                          "gross_salary": "₹400000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101004,
+                          "name_of_sanctioned_posts": "ASSISTANT DIRECTOR (P & S)",
+                          "emp_name": "Priya Mehta",
+                          "emp_id": 1004,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1982-08-25",
+                          "date_of_first_appointment": "2007-06-12",
+                          "designation_at_first_appointment": "Assistant Director",
+                          "qualification": "M.A. Economics",
+                          "subject_in_pg": "Economics",
+                          "present_designation": "Assistant Director (P & S)",
+                          "date_of_latest_promotion": "2013-09-20",
+                          "date_of_retirement": "2042-08-25",
+                          "date_from_which_working_in_this_current_office": "2007-06-12",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2007-06-12",
+                                  "end_date": "2010-06-11"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2010-06-12",
+                                  "end_date": "2013-06-11"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2013-06-12",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹700000",
+                          "pay_level": "Level 8",
+                          "gross_salary": "₹850000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101005,
+                          "name_of_sanctioned_posts": "CHAUFFAUR",
+                          "emp_name": "Ravi Kumar",
+                          "emp_id": 1005,
+                          "attendance": "Absent",
+                          "date_of_birth": "1978-10-12",
+                          "date_of_first_appointment": "2005-04-01",
+                          "designation_at_first_appointment": "Driver",
+                          "qualification": "10th Grade",
+                          "subject_in_pg": "None",
+                          "present_designation": "Chauffeur",
+                          "date_of_latest_promotion": "2010-05-15",
+                          "date_of_retirement": "2038-10-12",
+                          "date_from_which_working_in_this_current_office": "2005-04-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2005-04-01",
+                                  "end_date": "2008-03-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2008-04-01",
+                                  "end_date": "2011-03-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2011-04-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹300000",
+                          "pay_level": "Level 2",
+                          "gross_salary": "₹350000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101006,
+                          "name_of_sanctioned_posts": "CEO",
+                          "emp_name": "Arun Saini",
+                          "emp_id": 1006,
+                          "attendance": "Present",
+                          "date_of_birth": "1975-12-03",
+                          "date_of_first_appointment": "2000-07-21",
+                          "designation_at_first_appointment": "Chief Executive Officer",
+                          "qualification": "MBA",
+                          "subject_in_pg": "Business Administration",
+                          "present_designation": "CEO",
+                          "date_of_latest_promotion": "2010-01-15",
+                          "date_of_retirement": "2045-12-03",
+                          "date_from_which_working_in_this_current_office": "2000-07-21",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2000-07-21",
+                                  "end_date": "2005-07-20"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2005-07-21",
+                                  "end_date": "2010-07-20"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2010-07-21",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹1000000",
+                          "pay_level": "Level 10",
+                          "gross_salary": "₹1200000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101007,
+                          "name_of_sanctioned_posts": "DEPO",
+                          "emp_name": "Simran Kaur",
+                          "emp_id": 1007,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1988-02-14",
+                          "date_of_first_appointment": "2012-09-01",
+                          "designation_at_first_appointment": "Depot Manager",
+                          "qualification": "M.Sc",
+                          "subject_in_pg": "Biology",
+                          "present_designation": "Depot Officer",
+                          "date_of_latest_promotion": "2016-03-10",
+                          "date_of_retirement": "2040-02-14",
+                          "date_from_which_working_in_this_current_office": "2012-09-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2012-09-01",
+                                  "end_date": "2015-08-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2015-09-01",
+                                  "end_date": "2018-08-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2018-09-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 6",
+                          "gross_salary": "₹600000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      }
+                  ],
+                  "dailyAttendance": [
+                      {
+                          "date": "2023-08-15",
+                          "attendanceRecords": [
+                              {
+                                  "employeeId": "2001",
+                                  "status": "Absent"
+                              }
+                          ],
+                          "notes": "Vikram Singh was on medical leave."
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "zone": "bhagwah",
+          "zonation": "III",
+          "schools": [
+              {
+                  "id": 103,
+                  "name": "Vidya Mandir",
+                  "address": "Main Road, Bhagwah, J&K 183001",
+                  "principal": "Ramesh Kumar",
+                  "contact": "+91-9988776655",
+                  "scheme": "secondary",
+                  "sub_scheme": "sec.b",
+                  "employees": [
+                      {
+                          "udise_code": 101001,
+                          "name_of_sanctioned_posts": "TEACHER",
+                          "emp_name": "Rohit Verma",
+                          "emp_id": 1001,
+                          "attendance": "Present",
+                          "date_of_birth": "1985-06-15",
+                          "date_of_first_appointment": "2010-07-01",
+                          "designation_at_first_appointment": "Assistant Teacher",
+                          "qualification": "B.Ed, M.Ed",
+                          "subject_in_pg": "Mathematics",
+                          "present_designation": "Senior Teacher",
+                          "date_of_latest_promotion": "2018-06-20",
+                          "date_of_retirement": "2050-06-15",
+                          "date_from_which_working_in_this_current_office": "2010-07-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2010-07-01",
+                                  "end_date": "2013-06-30"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2013-07-01",
+                                  "end_date": "2016-06-30"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2016-07-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 5",
+                          "gross_salary": "₹650000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Teaching"
+                      },
+                      {
+                          "udise_code": 101002,
+                          "name_of_sanctioned_posts": "ACCOUNTANT",
+                          "emp_name": "Amit Kumar",
+                          "emp_id": 1002,
+                          "attendance": "Present",
+                          "date_of_birth": "1984-05-10",
+                          "date_of_first_appointment": "2009-04-15",
+                          "designation_at_first_appointment": "Junior Accountant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Commerce",
+                          "present_designation": "Accountant",
+                          "date_of_latest_promotion": "2015-07-10",
+                          "date_of_retirement": "2044-05-10",
+                          "date_from_which_working_in_this_current_office": "2009-04-15",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2009-04-15",
+                                  "end_date": "2012-04-14"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2012-04-15",
+                                  "end_date": "2015-04-14"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2015-04-15",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹400000",
+                          "pay_level": "Level 4",
+                          "gross_salary": "₹450000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101003,
+                          "name_of_sanctioned_posts": "ACCOUNTS ASSISTANT",
+                          "emp_name": "Suresh Yadav",
+                          "emp_id": 1003,
+                          "attendance": "Leave",
+                          "date_of_birth": "1990-03-05",
+                          "date_of_first_appointment": "2015-01-10",
+                          "designation_at_first_appointment": "Accounts Assistant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Business Studies",
+                          "present_designation": "Accounts Assistant",
+                          "date_of_latest_promotion": "2020-05-20",
+                          "date_of_retirement": "2050-03-05",
+                          "date_from_which_working_in_this_current_office": "2015-01-10",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2015-01-10",
+                                  "end_date": "2017-01-09"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2017-01-10",
+                                  "end_date": "2019-01-09"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2019-01-10",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹350000",
+                          "pay_level": "Level 3",
+                          "gross_salary": "₹400000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101004,
+                          "name_of_sanctioned_posts": "ASSISTANT DIRECTOR (P & S)",
+                          "emp_name": "Priya Mehta",
+                          "emp_id": 1004,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1982-08-25",
+                          "date_of_first_appointment": "2007-06-12",
+                          "designation_at_first_appointment": "Assistant Director",
+                          "qualification": "M.A. Economics",
+                          "subject_in_pg": "Economics",
+                          "present_designation": "Assistant Director (P & S)",
+                          "date_of_latest_promotion": "2013-09-20",
+                          "date_of_retirement": "2042-08-25",
+                          "date_from_which_working_in_this_current_office": "2007-06-12",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2007-06-12",
+                                  "end_date": "2010-06-11"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2010-06-12",
+                                  "end_date": "2013-06-11"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2013-06-12",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹700000",
+                          "pay_level": "Level 8",
+                          "gross_salary": "₹850000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101005,
+                          "name_of_sanctioned_posts": "CHAUFFAUR",
+                          "emp_name": "Ravi Kumar",
+                          "emp_id": 1005,
+                          "attendance": "Absent",
+                          "date_of_birth": "1978-10-12",
+                          "date_of_first_appointment": "2005-04-01",
+                          "designation_at_first_appointment": "Driver",
+                          "qualification": "10th Grade",
+                          "subject_in_pg": "None",
+                          "present_designation": "Chauffeur",
+                          "date_of_latest_promotion": "2010-05-15",
+                          "date_of_retirement": "2038-10-12",
+                          "date_from_which_working_in_this_current_office": "2005-04-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2005-04-01",
+                                  "end_date": "2008-03-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2008-04-01",
+                                  "end_date": "2011-03-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2011-04-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹300000",
+                          "pay_level": "Level 2",
+                          "gross_salary": "₹350000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101006,
+                          "name_of_sanctioned_posts": "CEO",
+                          "emp_name": "Arun Saini",
+                          "emp_id": 1006,
+                          "attendance": "Present",
+                          "date_of_birth": "1975-12-03",
+                          "date_of_first_appointment": "2000-07-21",
+                          "designation_at_first_appointment": "Chief Executive Officer",
+                          "qualification": "MBA",
+                          "subject_in_pg": "Business Administration",
+                          "present_designation": "CEO",
+                          "date_of_latest_promotion": "2010-01-15",
+                          "date_of_retirement": "2045-12-03",
+                          "date_from_which_working_in_this_current_office": "2000-07-21",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2000-07-21",
+                                  "end_date": "2005-07-20"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2005-07-21",
+                                  "end_date": "2010-07-20"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2010-07-21",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹1000000",
+                          "pay_level": "Level 10",
+                          "gross_salary": "₹1200000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101007,
+                          "name_of_sanctioned_posts": "DEPO",
+                          "emp_name": "Simran Kaur",
+                          "emp_id": 1007,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1988-02-14",
+                          "date_of_first_appointment": "2012-09-01",
+                          "designation_at_first_appointment": "Depot Manager",
+                          "qualification": "M.Sc",
+                          "subject_in_pg": "Biology",
+                          "present_designation": "Depot Officer",
+                          "date_of_latest_promotion": "2016-03-10",
+                          "date_of_retirement": "2040-02-14",
+                          "date_from_which_working_in_this_current_office": "2012-09-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2012-09-01",
+                                  "end_date": "2015-08-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2015-09-01",
+                                  "end_date": "2018-08-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2018-09-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 6",
+                          "gross_salary": "₹600000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      }
+                  ],
+                  "dailyAttendance": [
+                      {
+                          "date": "2023-08-15",
+                          "attendanceRecords": [
+                              {
+                                  "employeeId": "3001",
+                                  "status": "Present"
+                              }
+                          ],
+                          "notes": "All operations normal."
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "zone": "bhaessa",
+          "zonation": "IV",
+          "schools": [
+              {
+                  "id": 104,
+                  "name": "Bal Vidya Mandir",
+                  "address": "Sector 17, Bhaessa, J&K 184001",
+                  "principal": "Anita Desai",
+                  "contact": "+91-9123456780",
+                  "scheme": "higher secondary",
+                  "sub_scheme": "10+2",
+                  "employees": [
+                      {
+                          "udise_code": 101001,
+                          "name_of_sanctioned_posts": "TEACHER",
+                          "emp_name": "Rohit Verma",
+                          "emp_id": 1001,
+                          "attendance": "Present",
+                          "date_of_birth": "1985-06-15",
+                          "date_of_first_appointment": "2010-07-01",
+                          "designation_at_first_appointment": "Assistant Teacher",
+                          "qualification": "B.Ed, M.Ed",
+                          "subject_in_pg": "Mathematics",
+                          "present_designation": "Senior Teacher",
+                          "date_of_latest_promotion": "2018-06-20",
+                          "date_of_retirement": "2050-06-15",
+                          "date_from_which_working_in_this_current_office": "2010-07-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2010-07-01",
+                                  "end_date": "2013-06-30"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2013-07-01",
+                                  "end_date": "2016-06-30"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2016-07-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 5",
+                          "gross_salary": "₹650000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Teaching"
+                      },
+                      {
+                          "udise_code": 101002,
+                          "name_of_sanctioned_posts": "ACCOUNTANT",
+                          "emp_name": "Amit Kumar",
+                          "emp_id": 1002,
+                          "attendance": "Present",
+                          "date_of_birth": "1984-05-10",
+                          "date_of_first_appointment": "2009-04-15",
+                          "designation_at_first_appointment": "Junior Accountant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Commerce",
+                          "present_designation": "Accountant",
+                          "date_of_latest_promotion": "2015-07-10",
+                          "date_of_retirement": "2044-05-10",
+                          "date_from_which_working_in_this_current_office": "2009-04-15",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2009-04-15",
+                                  "end_date": "2012-04-14"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2012-04-15",
+                                  "end_date": "2015-04-14"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2015-04-15",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹400000",
+                          "pay_level": "Level 4",
+                          "gross_salary": "₹450000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101003,
+                          "name_of_sanctioned_posts": "ACCOUNTS ASSISTANT",
+                          "emp_name": "Suresh Yadav",
+                          "emp_id": 1003,
+                          "attendance": "Leave",
+                          "date_of_birth": "1990-03-05",
+                          "date_of_first_appointment": "2015-01-10",
+                          "designation_at_first_appointment": "Accounts Assistant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Business Studies",
+                          "present_designation": "Accounts Assistant",
+                          "date_of_latest_promotion": "2020-05-20",
+                          "date_of_retirement": "2050-03-05",
+                          "date_from_which_working_in_this_current_office": "2015-01-10",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2015-01-10",
+                                  "end_date": "2017-01-09"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2017-01-10",
+                                  "end_date": "2019-01-09"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2019-01-10",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹350000",
+                          "pay_level": "Level 3",
+                          "gross_salary": "₹400000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101004,
+                          "name_of_sanctioned_posts": "ASSISTANT DIRECTOR (P & S)",
+                          "emp_name": "Priya Mehta",
+                          "emp_id": 1004,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1982-08-25",
+                          "date_of_first_appointment": "2007-06-12",
+                          "designation_at_first_appointment": "Assistant Director",
+                          "qualification": "M.A. Economics",
+                          "subject_in_pg": "Economics",
+                          "present_designation": "Assistant Director (P & S)",
+                          "date_of_latest_promotion": "2013-09-20",
+                          "date_of_retirement": "2042-08-25",
+                          "date_from_which_working_in_this_current_office": "2007-06-12",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2007-06-12",
+                                  "end_date": "2010-06-11"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2010-06-12",
+                                  "end_date": "2013-06-11"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2013-06-12",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹700000",
+                          "pay_level": "Level 8",
+                          "gross_salary": "₹850000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101005,
+                          "name_of_sanctioned_posts": "CHAUFFAUR",
+                          "emp_name": "Ravi Kumar",
+                          "emp_id": 1005,
+                          "attendance": "Absent",
+                          "date_of_birth": "1978-10-12",
+                          "date_of_first_appointment": "2005-04-01",
+                          "designation_at_first_appointment": "Driver",
+                          "qualification": "10th Grade",
+                          "subject_in_pg": "None",
+                          "present_designation": "Chauffeur",
+                          "date_of_latest_promotion": "2010-05-15",
+                          "date_of_retirement": "2038-10-12",
+                          "date_from_which_working_in_this_current_office": "2005-04-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2005-04-01",
+                                  "end_date": "2008-03-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2008-04-01",
+                                  "end_date": "2011-03-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2011-04-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹300000",
+                          "pay_level": "Level 2",
+                          "gross_salary": "₹350000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101006,
+                          "name_of_sanctioned_posts": "CEO",
+                          "emp_name": "Arun Saini",
+                          "emp_id": 1006,
+                          "attendance": "Present",
+                          "date_of_birth": "1975-12-03",
+                          "date_of_first_appointment": "2000-07-21",
+                          "designation_at_first_appointment": "Chief Executive Officer",
+                          "qualification": "MBA",
+                          "subject_in_pg": "Business Administration",
+                          "present_designation": "CEO",
+                          "date_of_latest_promotion": "2010-01-15",
+                          "date_of_retirement": "2045-12-03",
+                          "date_from_which_working_in_this_current_office": "2000-07-21",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2000-07-21",
+                                  "end_date": "2005-07-20"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2005-07-21",
+                                  "end_date": "2010-07-20"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2010-07-21",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹1000000",
+                          "pay_level": "Level 10",
+                          "gross_salary": "₹1200000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101007,
+                          "name_of_sanctioned_posts": "DEPO",
+                          "emp_name": "Simran Kaur",
+                          "emp_id": 1007,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1988-02-14",
+                          "date_of_first_appointment": "2012-09-01",
+                          "designation_at_first_appointment": "Depot Manager",
+                          "qualification": "M.Sc",
+                          "subject_in_pg": "Biology",
+                          "present_designation": "Depot Officer",
+                          "date_of_latest_promotion": "2016-03-10",
+                          "date_of_retirement": "2040-02-14",
+                          "date_from_which_working_in_this_current_office": "2012-09-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2012-09-01",
+                                  "end_date": "2015-08-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2015-09-01",
+                                  "end_date": "2018-08-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2018-09-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 6",
+                          "gross_salary": "₹600000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      }
+                  ],
+                  "dailyAttendance": [
+                      {
+                          "date": "2023-08-15",
+                          "attendanceRecords": [
+                              {
+                                  "employeeId": "4001",
+                                  "status": "Present"
+                              }
+                          ],
+                          "notes": "Normal attendance recorded."
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "zone": "bhalla",
+          "zonation": "V",
+          "schools": [
+              {
+                  "id": 105,
+                  "name": "Shivaji Public School",
+                  "address": "Opp. Municipal Office, Bhalla, J&K 185001",
+                  "principal": "Rohit Singh",
+                  "contact": "+91-9988776655",
+                  "scheme": "secondary",
+                  "sub_scheme": "sec.a",
+                  "employees": [
+                      {
+                          "udise_code": 101001,
+                          "name_of_sanctioned_posts": "TEACHER",
+                          "emp_name": "Rohit Verma",
+                          "emp_id": 1001,
+                          "attendance": "Present",
+                          "date_of_birth": "1985-06-15",
+                          "date_of_first_appointment": "2010-07-01",
+                          "designation_at_first_appointment": "Assistant Teacher",
+                          "qualification": "B.Ed, M.Ed",
+                          "subject_in_pg": "Mathematics",
+                          "present_designation": "Senior Teacher",
+                          "date_of_latest_promotion": "2018-06-20",
+                          "date_of_retirement": "2050-06-15",
+                          "date_from_which_working_in_this_current_office": "2010-07-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2010-07-01",
+                                  "end_date": "2013-06-30"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2013-07-01",
+                                  "end_date": "2016-06-30"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2016-07-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 5",
+                          "gross_salary": "₹650000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Teaching"
+                      },
+                      {
+                          "udise_code": 101002,
+                          "name_of_sanctioned_posts": "ACCOUNTANT",
+                          "emp_name": "Amit Kumar",
+                          "emp_id": 1002,
+                          "attendance": "Present",
+                          "date_of_birth": "1984-05-10",
+                          "date_of_first_appointment": "2009-04-15",
+                          "designation_at_first_appointment": "Junior Accountant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Commerce",
+                          "present_designation": "Accountant",
+                          "date_of_latest_promotion": "2015-07-10",
+                          "date_of_retirement": "2044-05-10",
+                          "date_from_which_working_in_this_current_office": "2009-04-15",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2009-04-15",
+                                  "end_date": "2012-04-14"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2012-04-15",
+                                  "end_date": "2015-04-14"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2015-04-15",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹400000",
+                          "pay_level": "Level 4",
+                          "gross_salary": "₹450000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101003,
+                          "name_of_sanctioned_posts": "ACCOUNTS ASSISTANT",
+                          "emp_name": "Suresh Yadav",
+                          "emp_id": 1003,
+                          "attendance": "Leave",
+                          "date_of_birth": "1990-03-05",
+                          "date_of_first_appointment": "2015-01-10",
+                          "designation_at_first_appointment": "Accounts Assistant",
+                          "qualification": "B.Com",
+                          "subject_in_pg": "Business Studies",
+                          "present_designation": "Accounts Assistant",
+                          "date_of_latest_promotion": "2020-05-20",
+                          "date_of_retirement": "2050-03-05",
+                          "date_from_which_working_in_this_current_office": "2015-01-10",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2015-01-10",
+                                  "end_date": "2017-01-09"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2017-01-10",
+                                  "end_date": "2019-01-09"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2019-01-10",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹350000",
+                          "pay_level": "Level 3",
+                          "gross_salary": "₹400000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101004,
+                          "name_of_sanctioned_posts": "ASSISTANT DIRECTOR (P & S)",
+                          "emp_name": "Priya Mehta",
+                          "emp_id": 1004,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1982-08-25",
+                          "date_of_first_appointment": "2007-06-12",
+                          "designation_at_first_appointment": "Assistant Director",
+                          "qualification": "M.A. Economics",
+                          "subject_in_pg": "Economics",
+                          "present_designation": "Assistant Director (P & S)",
+                          "date_of_latest_promotion": "2013-09-20",
+                          "date_of_retirement": "2042-08-25",
+                          "date_from_which_working_in_this_current_office": "2007-06-12",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2007-06-12",
+                                  "end_date": "2010-06-11"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2010-06-12",
+                                  "end_date": "2013-06-11"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2013-06-12",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹700000",
+                          "pay_level": "Level 8",
+                          "gross_salary": "₹850000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101005,
+                          "name_of_sanctioned_posts": "CHAUFFAUR",
+                          "emp_name": "Ravi Kumar",
+                          "emp_id": 1005,
+                          "attendance": "Absent",
+                          "date_of_birth": "1978-10-12",
+                          "date_of_first_appointment": "2005-04-01",
+                          "designation_at_first_appointment": "Driver",
+                          "qualification": "10th Grade",
+                          "subject_in_pg": "None",
+                          "present_designation": "Chauffeur",
+                          "date_of_latest_promotion": "2010-05-15",
+                          "date_of_retirement": "2038-10-12",
+                          "date_from_which_working_in_this_current_office": "2005-04-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2005-04-01",
+                                  "end_date": "2008-03-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2008-04-01",
+                                  "end_date": "2011-03-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2011-04-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹300000",
+                          "pay_level": "Level 2",
+                          "gross_salary": "₹350000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101006,
+                          "name_of_sanctioned_posts": "CEO",
+                          "emp_name": "Arun Saini",
+                          "emp_id": 1006,
+                          "attendance": "Present",
+                          "date_of_birth": "1975-12-03",
+                          "date_of_first_appointment": "2000-07-21",
+                          "designation_at_first_appointment": "Chief Executive Officer",
+                          "qualification": "MBA",
+                          "subject_in_pg": "Business Administration",
+                          "present_designation": "CEO",
+                          "date_of_latest_promotion": "2010-01-15",
+                          "date_of_retirement": "2045-12-03",
+                          "date_from_which_working_in_this_current_office": "2000-07-21",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2000-07-21",
+                                  "end_date": "2005-07-20"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2005-07-21",
+                                  "end_date": "2010-07-20"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2010-07-21",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹1000000",
+                          "pay_level": "Level 10",
+                          "gross_salary": "₹1200000",
+                          "whether_nps_or_ops": "NPS",
+                          "category": "Non-Teaching"
+                      },
+                      {
+                          "udise_code": 101007,
+                          "name_of_sanctioned_posts": "DEPO",
+                          "emp_name": "Simran Kaur",
+                          "emp_id": 1007,
+                          "attendance": "On Duty",
+                          "date_of_birth": "1988-02-14",
+                          "date_of_first_appointment": "2012-09-01",
+                          "designation_at_first_appointment": "Depot Manager",
+                          "qualification": "M.Sc",
+                          "subject_in_pg": "Biology",
+                          "present_designation": "Depot Officer",
+                          "date_of_latest_promotion": "2016-03-10",
+                          "date_of_retirement": "2040-02-14",
+                          "date_from_which_working_in_this_current_office": "2012-09-01",
+                          "last_three_postings": {
+                              "first_posting": {
+                                  "school": "Pre-School A",
+                                  "start_date": "2012-09-01",
+                                  "end_date": "2015-08-31"
+                              },
+                              "second_posting": {
+                                  "school": "Pre-School B",
+                                  "start_date": "2015-09-01",
+                                  "end_date": "2018-08-31"
+                              },
+                              "third_posting": {
+                                  "school": "Sanskriti Vidyalaya",
+                                  "start_date": "2018-09-01",
+                                  "end_date": "Present"
+                              }
+                          },
+                          "current_payscale": "₹500000",
+                          "pay_level": "Level 6",
+                          "gross_salary": "₹600000",
+                          "whether_nps_or_ops": "OPS",
+                          "category": "Non-Teaching"
+                      }
+                  ],
+                  "dailyAttendance": [
+                      {
+                          "date": "2023-08-15",
+                          "attendanceRecords": [
+                              {
+                                  "employeeId": "5001",
+                                  "status": "Present"
+                              }
+                          ],
+                          "notes": "Regular attendance."
+                      }
+                  ]
+              }
+          ]
+      }
+  ]
+}

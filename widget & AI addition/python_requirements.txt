@@ -1,0 +1,30 @@
+# Python dependencies for the integrated Employee Management System
+
+# Flask (for the simple IP tracking service - keeping for backward compatibility)
+Flask==2.3.2
+flask-cors==3.0.10
+
+# FastAPI (for the chatbot service)
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+
+# Chatbot dependencies
+langchain==0.0.350
+langchain-community==0.0.10
+langchain-core==0.1.0
+openai==1.6.1
+# faiss-cpu wheels are not always available on Windows via pip.
+# Install faiss-cpu only on non-Windows platforms with pip; Windows users should use conda:
+#   conda install -c pytorch faiss-cpu
+faiss-cpu; sys_platform != "win32"
+sentence-transformers==2.2.2
+PyMuPDF==1.23.14
+torch==2.1.0
+python-dotenv==1.0.0
+
+# File handling
+Pillow==10.1.0
+
+# Additional utilities
+requests==2.31.0

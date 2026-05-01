@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Employee Mgmt — Login (IP-Logging Demo)</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:2rem;background:#f4f6fb;color:#111}
+    .card{max-width:520px;margin:1.5rem auto;padding:1.25rem;border-radius:8px;background:#fff;box-shadow:0 6px 18px rgba(20,30,60,0.08)}
+    label{display:block;margin-top:0.75rem}
+    input{width:100%;padding:0.6rem;margin-top:0.25rem;border-radius:6px;border:1px solid #d7dbe6}
+    button{margin-top:1rem;padding:0.6rem 1rem;border-radius:6px;border:0;background:#2563eb;color:#fff;cursor:pointer}
+    pre{background:#0b1220;color:#dbeafe;padding:0.75rem;border-radius:6px;overflow:auto}
+    .muted{color:#566270;font-size:0.95rem}
+    .small{font-size:0.9rem;color:#334155}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Login — IP logging demo</h2>
+    <p class="muted">This modified login captures the user's public IP and includes it in the login payload sent to your backend. If the backend is not reachable, the login is saved locally (browser) so you can demo the idea.</p>
+
+    <form id="loginForm">
+      <label>Username
+        <input id="username" required placeholder="e.g. alice" />
+      </label>
+      <label>Password
+        <input id="password" type="password" required placeholder="your password" />
+      </label>
+      <label><input id="remember" type="checkbox" /> Remember demo (store locally if no backend)</label>
+      <div style="display:flex;gap:.5rem;align-items:center">
+        <button id="submitBtn" type="submit">Login</button>
+        <button id="downloadBtn" type="button">Download saved logs (CSV)</button>
+      </div>
+    </form>
+
+    <hr />
+    <div>
+      <strong>Demo backend URL:</strong>
+      <input id="backendUrl" style="width:100%;margin-top:.5rem;padding:.45rem;border-radius:6px;border:1px solid #e2e8f0" value="http://localhost:5000/api/login" />
+      <div class="small">Change the backend URL to match your server endpoint. The payload will include an <code>ip</code> field.</div>
+    </div>
+
+    <hr />
+    <div id="status" class="small">Ready.</div>
+  </div>
+
+<script>
+/*
+Behavior:
+- On submit: tries to fetch public IP from https://api.ipify.org?format=json
+- Builds payload: { username, timestamp, ip, userAgent }
+- Attempts POST to backendUrl. If it succeeds (status 200-299) shows success.
+- If POST fails, saves the payload into localStorage key 'demo_login_logs' for demo review.
+- 'Download saved logs (CSV)' creates a CSV from saved logs and downloads it.
+Notes for mentor: front-end cannot reliably get private/local IP from client without advanced WebRTC trickery;
+public IP is sufficient for basic login tracking and matches what routers/NAT expose to servers.
+*/
+
+const ipService = 'https://api.ipify.org?format=json';
+const form = document.getElementById('loginForm');
+const status = document.getElementById('status');
+const backendEl = document.getElementById('backendUrl');
+const downloadBtn = document.getElementById('downloadBtn');
+
+function nowISO(){ return new Date().toISOString(); }
+
+async function getPublicIP(timeout = 3000){
+  // Try to fetch public IP; fallback to 'unknown' if fails/timeout
+  try{
+    const controller = new AbortController();
+    const id = setTimeout(()=>controller.abort(), timeout);
+    const resp = await fetch(ipService, {signal: controller.signal});
+    clearTimeout(id);
+    if(!resp.ok) throw new Error('IP service fail');
+    const json = await resp.json();
+    return json.ip || 'unknown';
+  }catch(e){
+    return 'unknown';
+  }
+}
+
+function saveLocally(payload){
+  const key = 'demo_login_logs';
+  const raw = localStorage.getItem(key);
+  const arr = raw ? JSON.parse(raw) : [];
+  arr.push(payload);
+  localStorage.setItem(key, JSON.stringify(arr));
+}
+
+function downloadCSV(){
+  const raw = localStorage.getItem('demo_login_logs') || '[]';
+  const arr = JSON.parse(raw);
+  if(arr.length===0){
+    alert('No saved logs found in browser localStorage (key demo_login_logs).');
+    return;
+  }
+  // build CSV
+  const headers = ['username','timestamp','ip','userAgent','note'];
+  const rows = arr.map(r => headers.map(h=> (r[h] ?? '').toString().replace(/"/g,'""')).map(v=>`"${v}"`).join(','));
+  const csv = [headers.join(','), ...rows].join('\\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'login_logs_demo.csv';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+downloadBtn.addEventListener('click', downloadCSV);
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value; // not logged in demo
+  const storeIfNoBackend = document.getElementById('remember').checked;
+  const backendUrl = backendEl.value.trim() || '';
+
+  status.textContent = 'Obtaining IP...';
+  const ip = await getPublicIP();
+
+  const payload = {
+    username,
+    timestamp: nowISO(),
+    ip,
+    userAgent: navigator.userAgent,
+    note: 'frontend-demo: ip included in payload'
+  };
+
+  status.textContent = 'Sending login payload to backend (if reachable)...';
+
+  let sentToBackend = false;
+  if(backendUrl.startsWith('http')){
+    try{
+      const resp = await fetch(backendUrl, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload),
+        mode: 'cors'
+      });
+      if(resp.ok){
+        status.textContent = 'Login recorded on backend (demo). Response OK.';
+        sentToBackend = true;
+      } else {
+        status.textContent = 'Backend responded with status '+resp.status+'. Saved locally for demo.';
+      }
+    }catch(err){
+      status.textContent = 'Could not contact backend: ' + err.message + ' — saved locally for demo.';
+    }
+  } else {
+    status.textContent = 'No backend URL provided — saved locally for demo.';
+  }
+
+  if(!sentToBackend){
+    saveLocally(payload);
+  }
+});
+</script>
+</body>
+</html>

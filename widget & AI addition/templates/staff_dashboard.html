@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Login Monitoring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f6fa;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-info {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        input[type="text"],
+        input[type="url"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            background: #f8f9fa;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            border-bottom: 2px solid #dee2e6;
+            font-size: 0.85rem;
+        }
+
+        td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 0.8rem;
+            vertical-align: top;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .success-row {
+            background: #d4edda !important;
+        }
+
+        .failure-row {
+            background: #f8d7da !important;
+        }
+
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-failure {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .ip-info {
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .device-info {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .no-data {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            padding: 2rem;
+        }
+
+        .alert {
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .controls {
+                justify-content: center;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .filters {
+                grid-template-columns: 1fr;
+            }
+
+            th,
+            td {
+                padding: 6px 4px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <div class="logo">🔒</div>
+            <div>
+                <h2>Staff Dashboard - Login Monitoring</h2>
+                <div>Real-time security analytics</div>
+            </div>
+        </div>
+        <div>
+            <a href="/" class="btn btn-primary">← Back to Home</a>
+            <a href="/dashboard" class="btn btn-info">Main Dashboard</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="alert alert-info">
+                <strong>🛡️ Security Dashboard:</strong> This dashboard monitors all login attempts with IP tracking,
+                device fingerprinting, and failure analysis. Data is automatically collected from both successful and
+                failed login attempts.
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalLogins">--</div>
+                    <div class="stat-label">Total Login Attempts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="successfulLogins">--</div>
+                    <div class="stat-label">Successful Logins</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="failedLogins">--</div>
+                    <div class="stat-label">Failed Attempts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="uniqueIPs">--</div>
+                    <div class="stat-label">Unique IP Addresses</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="fetchLive" class="btn btn-primary">📡 Fetch Live Data</button>
+                <button id="loadLocal" class="btn btn-info">💾 Load Local Cache</button>
+                <button id="exportCSV" class="btn btn-success">📊 Export CSV</button>
+                <input type="url" id="apiEndpoint" placeholder="API Endpoint" value="/api/login-logs/logs" />
+                <button id="refreshData" class="btn btn-primary">🔄 Refresh</button>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="filterUsername">Username</label>
+                    <input type="text" id="filterUsername" placeholder="Filter by username">
+                </div>
+                <div class="filter-group">
+                    <label for="filterIP">IP Address</label>
+                    <input type="text" id="filterIP" placeholder="Filter by IP">
+                </div>
+                <div class="filter-group">
+                    <label for="filterStatus">Status</label>
+                    <select id="filterStatus">
+                        <option value="">All</option>
+                        <option value="success">Successful Only</option>
+                        <option value="failure">Failed Only</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterDevice">Device Type</label>
+                    <select id="filterDevice">
+                        <option value="">All Devices</option>
+                        <option value="desktop">Desktop</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="tablet">Tablet</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Recent Login Activity</h3>
+            <div class="table-container">
+                <table id="logsTable">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Timestamp</th>
+                            <th>IP Address</th>
+                            <th>Device Info</th>
+                            <th>Browser</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7" class="no-data">Click "Fetch Live Data" to load recent login activity</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allLogs = [];
+        let filteredLogs = [];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load cached data first
+            loadLocal();
+
+            // Set up event listeners
+            document.getElementById('fetchLive').addEventListener('click', fetchLiveData);
+            document.getElementById('loadLocal').addEventListener('click', loadLocal);
+            document.getElementById('exportCSV').addEventListener('click', exportCSV);
+            document.getElementById('refreshData').addEventListener('click', fetchLiveData);
+
+            // Set up filters
+            ['filterUsername', 'filterIP', 'filterStatus', 'filterDevice'].forEach(id => {
+                document.getElementById(id).addEventListener('input', applyFilters);
+            });
+
+            // Auto-refresh every 30 seconds
+            setInterval(fetchLiveData, 30000);
+        });
+
+        async function fetchLiveData() {
+            try {
+                const endpoint = document.getElementById('apiEndpoint').value;
+                const token = localStorage.getItem('token');
+
+                const headers = {
+                    'Content-Type': 'application/json'
+                };
+
+                if (token) {
+                    headers['Authorization'] = `Bearer ${token}`;
+                }
+
+                const response = await fetch(endpoint, { headers });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                allLogs = data.logs || data || [];
+
+                // Cache the data
+                localStorage.setItem('cached_login_logs', JSON.stringify(allLogs));
+
+                updateStats();
+                applyFilters();
+
+                showAlert('✅ Live data fetched successfully', 'success');
+
+            } catch (error) {
+                console.error('Error fetching live data:', error);
+                showAlert('⚠️ Could not fetch live data: ' + error.message, 'warning');
+
+                // Fallback to local data
+                loadLocal();
+            }
+        }
+
+        function loadLocal() {
+            try {
+                // Try cached API data first
+                const cachedData = localStorage.getItem('cached_login_logs');
+                if (cachedData) {
+                    allLogs = JSON.parse(cachedData);
+                    updateStats();
+                    applyFilters();
+                    showAlert('📂 Loaded cached data', 'info');
+                    return;
+                }
+
+                // Fallback to demo logs
+                const demoData = localStorage.getItem('demo_login_logs');
+                if (demoData) {
+                    allLogs = JSON.parse(demoData);
+                    updateStats();
+                    applyFilters();
+                    showAlert('📂 Loaded demo data from local storage', 'info');
+                } else {
+                    showAlert('ℹ️ No cached data found. Click "Fetch Live Data" to load from server.', 'info');
+                }
+            } catch (error) {
+                console.error('Error loading local data:', error);
+                showAlert('❌ Error loading local data', 'warning');
+            }
+        }
+
+        function updateStats() {
+            const total = allLogs.length;
+            const successful = allLogs.filter(log => log.success !== false).length;
+            const failed = total - successful;
+            const uniqueIPs = new Set(allLogs.map(log => log.client_ip || log.server_ip || log.ip)).size;
+
+            document.getElementById('totalLogins').textContent = total;
+            document.getElementById('successfulLogins').textContent = successful;
+            document.getElementById('failedLogins').textContent = failed;
+            document.getElementById('uniqueIPs').textContent = uniqueIPs;
+        }
+
+        function applyFilters() {
+            const usernameFilter = document.getElementById('filterUsername').value.toLowerCase();
+            const ipFilter = document.getElementById('filterIP').value.toLowerCase();
+            const statusFilter = document.getElementById('filterStatus').value;
+            const deviceFilter = document.getElementById('filterDevice').value.toLowerCase();
+
+            filteredLogs = allLogs.filter(log => {
+                const matchesUsername = !usernameFilter || (log.username || '').toLowerCase().includes(usernameFilter);
+                const matchesIP = !ipFilter || (log.client_ip || log.server_ip || log.ip || '').toLowerCase().includes(ipFilter);
+                const matchesStatus = !statusFilter ||
+                    (statusFilter === 'success' && log.success !== false) ||
+                    (statusFilter === 'failure' && log.success === false);
+                const matchesDevice = !deviceFilter || (log.device_type || '').toLowerCase().includes(deviceFilter);
+
+                return matchesUsername && matchesIP && matchesStatus && matchesDevice;
+            });
+
+            renderTable();
+        }
+
+        function renderTable() {
+            const tbody = document.querySelector('#logsTable tbody');
+            tbody.innerHTML = '';
+
+            if (filteredLogs.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" class="no-data">No logs match the current filters</td></tr>';
+                return;
+            }
+
+            // Sort by timestamp, newest first
+            const sortedLogs = [...filteredLogs].sort((a, b) =>
+                new Date(b.timestamp || 0) - new Date(a.timestamp || 0)
+            );
+
+            sortedLogs.forEach(log => {
+                const row = document.createElement('tr');
+                const isSuccess = log.success !== false;
+                row.className = isSuccess ? 'success-row' : 'failure-row';
+
+                const timestamp = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown';
+                const clientIp = log.client_ip || log.ip || 'Unknown';
+                const serverIp = log.server_ip || 'Unknown';
+                const deviceType = (log.device_type || 'Unknown').charAt(0).toUpperCase() + (log.device_type || 'unknown').slice(1);
+                const browser = log.browser || 'Unknown';
+                const os = log.os || 'Unknown';
+                const note = log.note || (isSuccess ? 'Login successful' : 'Login failed');
+
+                row.innerHTML = `
+                    <td><strong>${escapeHtml(log.username || 'Unknown')}</strong></td>
+                    <td>${escapeHtml(timestamp)}</td>
+                    <td>
+                        <div class="ip-info">
+                            <div>Client: ${escapeHtml(clientIp)}</div>
+                            ${serverIp !== clientIp ? `<div>Server: ${escapeHtml(serverIp)}</div>` : ''}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="device-info">
+                            <div><strong>${escapeHtml(deviceType)}</strong></div>
+                            <div>${escapeHtml(os)}</div>
+                        </div>
+                    </td>
+                    <td>${escapeHtml(browser)}</td>
+                    <td>
+                        <span class="status-badge ${isSuccess ? 'status-success' : 'status-failure'}">
+                            ${isSuccess ? '✅ Success' : '❌ Failed'}
+                        </span>
+                    </td>
+                    <td>${escapeHtml(note)}</td>
+                `;
+
+                tbody.appendChild(row);
+            });
+        }
+
+        function exportCSV() {
+            if (filteredLogs.length === 0) {
+                alert('No data to export');
+                return;
+            }
+
+            const headers = ['Username', 'Timestamp', 'Client IP', 'Server IP', 'Device Type', 'Browser', 'OS', 'Status', 'Note'];
+            const csvData = filteredLogs.map(log => [
+                log.username || '',
+                log.timestamp || '',
+                log.client_ip || log.ip || '',
+                log.server_ip || '',
+                log.device_type || '',
+                log.browser || '',
+                log.os || '',
+                log.success !== false ? 'Success' : 'Failed',
+                log.note || ''
+            ]);
+
+            const csv = [
+                headers.join(','),
+                ...csvData.map(row =>
+                    row.map(cell => `"${(cell || '').toString().replace(/"/g, '""')}"`).join(',')
+                )
+            ].join('\\n');
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `login-logs-${new Date().toISOString().split('T')[0]}.csv`;
+            link.click();
+            URL.revokeObjectURL(link.href);
+
+            showAlert('📊 CSV exported successfully', 'success');
+        }
+
+        function showAlert(message, type = 'info') {
+            // Remove existing alerts
+            const existingAlerts = document.querySelectorAll('.temp-alert');
+            existingAlerts.forEach(alert => alert.remove());
+
+            // Create new alert
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type} temp-alert`;
+            alert.textContent = message;
+
+            // Insert at the top of the container
+            const container = document.querySelector('.container');
+            container.insertBefore(alert, container.firstChild);
+
+            // Auto-remove after 5 seconds
+            setTimeout(() => alert.remove(), 5000);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>

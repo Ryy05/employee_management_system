@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Employee Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4e73df;
+            --secondary: #858796;
+            --success: #1cc88a;
+            --info: #36b9cc;
+            --warning: #f6c23e;
+            --danger: #e74a3b;
+            --light: #f8f9fc;
+            --dark: #5a5c69;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f8f9fc;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: #4e73df;
+            background: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .sidebar-brand {
+            padding: 1.5rem 1rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link i {
+            margin-right: 0.75rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar {
+            height: 70px;
+            background: white;
+            box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-name {
+            color: #606060;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .container-fluid {
+            padding: 1.5rem;
+        }
+
+        .page-title {
+            color: #5a5c69;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.35rem;
+            box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+        }
+
+        .card.success {
+            border-left-color: var(--success);
+        }
+
+        .card.info {
+            border-left-color: var(--info);
+        }
+
+        .card.warning {
+            border-left-color: var(--warning);
+        }
+
+        .card-title {
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .card.success .card-title {
+            color: var(--success);
+        }
+
+        .card.info .card-title {
+            color: var(--info);
+        }
+
+        .card.warning .card-title {
+            color: var(--warning);
+        }
+
+        .card-value {
+            color: #5a5c69;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: white;
+            border-radius: 0.35rem;
+            box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e3e6f0;
+        }
+
+        .section-title {
+            color: #4e73df;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Tables */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.75rem;
+            background: #f8f9fc;
+            color: #858796;
+            font-weight: 700;
+            border-bottom: 2px solid #e3e6f0;
+        }
+
+        td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #e3e6f0;
+            color: #858796;
+        }
+
+        /* Chatbot Widget */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 2000;
+            transition: transform 0.3s;
+        }
+
+        .chatbot-header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .chatbot-body {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #f8f9fc;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            max-width: 80%;
+            padding: 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .message.user {
+            background: var(--primary);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            border-bottom-right-radius: 0.25rem;
+        }
+
+        .message.bot {
+            background: white;
+            color: #5a5c69;
+            border: 1px solid #e3e6f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 0.25rem;
+        }
+
+        .chat-input-area {
+            padding: 1rem;
+            border-top: 1px solid #e3e6f0;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #d1d3e2;
+            border-radius: 0.35rem;
+            outline: none;
+        }
+
+        .chat-send {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.35rem;
+            cursor: pointer;
+        }
+
+        .minimized {
+            transform: translateY(calc(100% - 60px));
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 3px solid var(--primary);
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-brand">
+            <i class="fas fa-school"></i> EMS Admin
+        </div>
+        <ul style="padding: 0;">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" onclick="showSection('dashboard', event)">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showSection('employees', event)">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Employees</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showSection('transfers', event)">
+                    <i class="fas fa-fw fa-exchange-alt"></i>
+                    <span>Transfers</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/staff-dashboard" class="nav-link">
+                    <i class="fas fa-fw fa-shield-alt"></i>
+                    <span>Security Logs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showSection('settings', event)">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Topbar -->
+        <div class="topbar">
+            <button id="sidebarToggle" style="background:none;border:none;cursor:pointer;color:#4e73df;">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="user-info">
+                <span class="user-name" id="userNameDisplay">Admin User</span>
+                <img src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                    style="width:32px;height:32px;border-radius:50%;">
+                <button onclick="logout()" style="background:none;border:none;color:#e74a3b;cursor:pointer;">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="container-fluid">
+
+            <!-- Dashboard Section -->
+            <div id="dashboard-section" class="content-section active">
+                <h1 class="page-title">Dashboard Overview</h1>
+
+                <div class="stats-grid">
+                    <div class="card">
+                        <div class="card-title">Total Employees</div>
+                        <div class="card-value" id="totalEmployees">Loading...</div>
+                    </div>
+                    <div class="card success">
+                        <div class="card-title">Approved Transfers</div>
+                        <div class="card-value" id="approvedTransfers">Loading...</div>
+                    </div>
+                    <div class="card info">
+                        <div class="card-title">Total Schools</div>
+                        <div class="card-value" id="totalSchools">Loading...</div>
+                    </div>
+                    <div class="card warning">
+                        <div class="card-title">Pending Requests</div>
+                        <div class="card-value" id="pendingRequests">Loading...</div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <div class="section-title">Recent Activity</div>
+                </div>
+                <p>System running normally. Database connected.</p>
+            </div>
+
+            <!-- Employees Section -->
+            <div id="employees-section" class="content-section">
+                <div class="section-header">
+                    <div class="section-title">Employee Directory</div>
+                    <button class="chat-send" onclick="fetchEmployees()">Refresh</button>
+                </div>
+                <div class="table-responsive">
+                    <table id="employeesTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Department</th>
+                                <th>School</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Transfers Section -->
+            <div id="transfers-section" class="content-section">
+                <div class="section-header">
+                    <div class="section-title">Transfer Requests</div>
+                    <button class="chat-send" onclick="fetchTransfers()">Refresh</button>
+                </div>
+                <div class="table-responsive">
+                    <table id="transfersTable">
+                        <thead>
+                            <tr>
+                                <th>Employee</th>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings-section" class="content-section">
+                <div class="section-header">
+                    <div class="section-title">System Settings</div>
+                </div>
+                <div id="settingsContent">Loading...</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget minimized" id="chatbotWidget">
+        <div class="chatbot-header" onclick="toggleChatbot()">
+            <span><i class="fas fa-robot"></i> AI Assistant</span>
+            <i class="fas fa-chevron-up" id="chatIcon"></i>
+        </div>
+        <div class="chatbot-body">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <strong>Hi there, I'm your AI Assistant.</strong><br>
+                    • walk you through dashboard features and workflows<br>
+                    • surface employee details, transfer history, and leave policies<br>
+                    • explain login analytics, alerts, and security good practices<br>
+                    Ask away whenever you need context or next steps.
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..."
+                    onkeypress="handleChatInput(event)">
+                <button class="chat-send" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auth Check
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/login';
+        }
+
+        let storedUser = {};
+        try {
+            storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+        } catch (err) {
+            console.warn('Unable to parse stored user profile:', err);
+        }
+        const storedUsername = localStorage.getItem('username') || storedUser.username || storedUser.userName || 'Admin';
+        const storedRoleLabel = localStorage.getItem('roleLabel') || storedUser.roleLabel || storedUser.role || '';
+        const storedRoleKey = localStorage.getItem('roleKey') || storedUser.roleKey || (storedRoleLabel ? storedRoleLabel.toLowerCase().split(' ')[0] : '');
+        const storedDisplayName = localStorage.getItem('displayName') || storedUser.displayName || storedUsername;
+        let authExpired = false;
+
+        // Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchAnalytics();
+            fetchEmployees();
+            fetchTransfers();
+            fetchSettings();
+
+            // Set user name
+            const label = resolveRoleLabel(storedRoleKey, storedRoleLabel);
+            const displayName = label ? `${storedDisplayName} • ${label}` : storedDisplayName;
+            document.getElementById('userNameDisplay').textContent = displayName;
+            document.title = `${label || 'Dashboard'} | Employee Management System`;
+        });
+
+        function resolveRoleLabel(roleKey, fallbackLabel) {
+            if (fallbackLabel) {
+                return fallbackLabel;
+            }
+            if (roleKey) {
+                return roleKey.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            }
+            return '';
+        }
+
+        // Navigation
+        function showSection(sectionId, evt) {
+            // Update Nav
+            document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active');
+            }
+
+            // Update Content
+            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(sectionId + '-section').classList.add('active');
+        }
+
+        function logout() {
+            authExpired = true;
+            ['token', 'user', 'username', 'role', 'roleKey', 'roleLabel', 'displayName'].forEach(key => localStorage.removeItem(key));
+            window.location.href = '/login';
+        }
+
+        function ensureAuthorized(response) {
+            if (response.status === 401) {
+                if (!authExpired) {
+                    alert('Your session has expired. Please log in again.');
+                }
+                logout();
+                return false;
+            }
+            return true;
+        }
+
+        // API Calls
+        async function fetchAnalytics() {
+            try {
+                const res = await fetch('/api/analytics/summary', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!ensureAuthorized(res)) {
+                    return;
+                }
+                if (!res.ok) {
+                    throw new Error('Failed to load analytics');
+                }
+                const data = await res.json();
+
+                document.getElementById('totalEmployees').textContent = data.employees.total;
+                document.getElementById('approvedTransfers').textContent = data.transfers.approved;
+                document.getElementById('totalSchools').textContent = data.schools.total;
+                document.getElementById('pendingRequests').textContent = data.transfers.pending;
+            } catch (e) {
+                console.error('Analytics error:', e);
+                document.getElementById('totalEmployees').textContent = '--';
+                document.getElementById('approvedTransfers').textContent = '--';
+                document.getElementById('totalSchools').textContent = '--';
+                document.getElementById('pendingRequests').textContent = '--';
+            }
+        }
+
+        async function fetchEmployees() {
+            try {
+                const res = await fetch('/api/employees', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!ensureAuthorized(res)) {
+                    return;
+                }
+                if (!res.ok) {
+                    throw new Error('Failed to load employees');
+                }
+                const data = await res.json();
+
+                const tbody = document.querySelector('#employeesTable tbody');
+                tbody.innerHTML = data.employees.map(emp => `
+                    <tr>
+                        <td>${emp.name}</td>
+                        <td>${emp.position}</td>
+                        <td>${emp.department}</td>
+                        <td>${emp.school}</td>
+                        <td><span style="color:var(--success)">${emp.status}</span></td>
+                    </tr>
+                `).join('');
+            } catch (e) {
+                console.error('Employees error:', e);
+                const tbody = document.querySelector('#employeesTable tbody');
+                tbody.innerHTML = '<tr><td colspan="5">Unable to load employee records right now.</td></tr>';
+            }
+        }
+
+        async function fetchTransfers() {
+            try {
+                const res = await fetch('/api/transfers', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!ensureAuthorized(res)) {
+                    return;
+                }
+                if (!res.ok) {
+                    throw new Error('Failed to load transfers');
+                }
+                const data = await res.json();
+
+                const tbody = document.querySelector('#transfersTable tbody');
+                tbody.innerHTML = data.transfers.map(t => `
+                    <tr>
+                        <td>${t.employee_name}</td>
+                        <td>${t.from_school}</td>
+                        <td>${t.to_school}</td>
+                        <td>${t.status}</td>
+                        <td>${t.request_date}</td>
+                    </tr>
+                `).join('');
+            } catch (e) {
+                console.error('Transfers error:', e);
+                const tbody = document.querySelector('#transfersTable tbody');
+                tbody.innerHTML = '<tr><td colspan="5">Unable to load transfer requests right now.</td></tr>';
+            }
+        }
+
+        async function fetchSettings() {
+            try {
+                const res = await fetch('/api/system/settings', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!ensureAuthorized(res)) {
+                    return;
+                }
+                if (!res.ok) {
+                    throw new Error('Failed to load settings');
+                }
+                const data = await res.json();
+                document.getElementById('settingsContent').innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (e) {
+                console.error('Settings error:', e);
+                document.getElementById('settingsContent').textContent = 'Unable to load system settings.';
+            }
+        }
+
+        // Chatbot Logic
+        function toggleChatbot() {
+            const widget = document.getElementById('chatbotWidget');
+            const icon = document.getElementById('chatIcon');
+            widget.classList.toggle('minimized');
+            icon.className = widget.classList.contains('minimized') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+        }
+
+        function handleChatInput(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Add user message
+            addMessage(message, 'user');
+            input.value = '';
+
+            // Show typing
+            const typingId = addMessage('Typing...', 'bot');
+
+            try {
+                const res = await fetch('/api/chatbot/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ message })
+                });
+                if (!ensureAuthorized(res)) {
+                    document.getElementById(typingId).remove();
+                    return;
+                }
+                if (!res.ok) {
+                    throw new Error('Failed to get chatbot response');
+                }
+                const data = await res.json();
+
+                // Remove typing and add response
+                document.getElementById(typingId).remove();
+                addMessage(data.response || 'I could not fetch a response right now.', 'bot');
+            } catch (e) {
+                document.getElementById(typingId).remove();
+                addMessage('Sorry, I encountered an error.', 'bot');
+            }
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `message ${sender}`;
+            div.textContent = text;
+            div.id = 'msg-' + Date.now();
+            document.getElementById('chatMessages').appendChild(div);
+            document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+            return div.id;
+        }
+    </script>
+</body>
+
+</html>

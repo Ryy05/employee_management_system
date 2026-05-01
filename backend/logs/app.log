@@ -1,0 +1,6 @@
+2025-04-21 10:09:01 [INFO]: ✅ Log Created | Action: Login | By: ceoUser (CEO) | Office: 67f6d109106db152ce7959aa | IP: ::1 | Desc: ceoUser logged in successfully as CEO
+2025-04-21 11:25:49 [INFO]: ✅ Log Created | Action: Login | By: zeo_bhalla (ZEO) | Office: 67f6d84f6c84dc1527cb0a2e | IP: ::1 | Desc: zeo_bhalla logged in successfully as ZEO
+2025-04-21 12:15:07 [INFO]: ✅ Log Created | Action: CREATE_OFFICE | By: zeo_bhalla (ZEO) | Office: 67f6d84f6c84dc1527cb0a2e | IP: ::1 | Desc: Office "SchoolNew" created successfully
+2025-04-21 12:15:21 [INFO]: ✅ Log Created | Action: Login | By: 1234432 (schoolAdmin) | Office: 6805e9720549399302f3a02e | IP: ::1 | Desc: 1234432 logged in successfully as schoolAdmin
+2025-04-21 12:15:38 [INFO]: ✅ Log Created | Action: Password Update | By: 1234432 (schoolAdmin) | Office: 6805e9720549399302f3a02e | IP: ::1 | Desc: User 1234432 updated their password.
+2025-04-21 12:21:08 [INFO]: ✅ Log Created | Action: Login | By: zeo_bhatyas (ZEO) | Office: 67fcd04b9cd016e004de26cb | IP: ::1 | Desc: zeo_bhatyas logged in successfully as ZEO
